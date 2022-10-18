@@ -3,6 +3,7 @@ const startGameBtn = document.getElementById("play-button");
 const containerRow = document.getElementById("container-row");
 const contWin = document.getElementById("cont-text-win")
 const contLose = document.getElementById("cont-text-lose")
+const spanMessage = document.getElementById("counter-tentative")
 let gameLost = !true;
 console.log(contLose);
 
@@ -10,6 +11,7 @@ console.log(contLose);
 startGameBtn.addEventListener("click", function () {
     const squaresNumber = 100;
     const bombsNumbers = [];
+    const counterTentative = [];
     const generatedNumbers = generateRandomOrderArray(squaresNumber);
     let gameLost = !true;
     contLose.classList.add("hidden")
@@ -100,10 +102,13 @@ startGameBtn.addEventListener("click", function () {
             const clickedNumber = parseInt(this.textContent);
             console.log(clickedNumber);
             console.log(bombsNumbers);
+            counterTentative.push(clickedNumber);
             if (bombsNumbers.includes(clickedNumber)) {
                 this.classList.add("bomb");
                 gameLost = true
                 contLose.classList.remove("hidden")
+                spanMessage.innerHTML = `hai usato ${counterTentative.length - 1} tentativi`
+                console.log(counterTentative, "ciao");
             } else {
                 this.classList.add("blu");
             }

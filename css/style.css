@@ -115,6 +115,11 @@ body {
     position: fixed;
 }
 
+#counter-tentative {
+    background-color: black;
+    padding: 1em;
+}
+
 .win-lose {
     background-color: black;
     padding: 1em;
