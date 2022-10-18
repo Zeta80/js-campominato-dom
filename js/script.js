@@ -13,12 +13,13 @@ startGameBtn.addEventListener("click", function () {
 
     //ciclo while per generare numericamente le 16 bombe che mi sergvono per il gioco
     do {
-
-
         let randomBomb = getRndInteger(1, 100)
         console.log(randomBomb);
 
-        bombsNumbers.push(randomBomb)
+        if (!bombsNumbers.includes(randomBomb)) {
+            bombsNumbers.push(randomBomb)
+        }
+
     } while (bombsNumbers.length !== 16);
     console.log(bombsNumbers);
 
