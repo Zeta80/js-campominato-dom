@@ -1,13 +1,18 @@
 
 const startGameBtn = document.getElementById("play-button");
 const containerRow = document.getElementById("container-row");
-
+const contWin = document.getElementById("cont-text-win")
+const contLose = document.getElementById("cont-text-lose")
+let gameLost = !true;
+console.log(contLose);
 
 //  Creare l'array con numeri casuali da 1 a 100
 startGameBtn.addEventListener("click", function () {
     const squaresNumber = 100;
     const bombsNumbers = [];
     const generatedNumbers = generateRandomOrderArray(squaresNumber);
+    let gameLost = !true;
+    contLose.classList.add("hidden")
 
     document.querySelector(".row").innerHTML = "";
 
@@ -34,10 +39,13 @@ startGameBtn.addEventListener("click", function () {
         const thisSquare = createSquare(thisNumber);
         // aggiungo eventListener allo square creato
         thisSquare.addEventListener("click", handleSquareClick);
-
         // inserisco l'elemento nel DOM
         row.append(thisSquare);
     }
+
+
+    //quando il gioco finisce restituisco output di scritta 
+
 
 
     // FUNCTIONS
@@ -88,15 +96,19 @@ startGameBtn.addEventListener("click", function () {
      * Description: La funzione che aggiunge il colore azzurro al click sullo square
      */
     function handleSquareClick() {
-        const clickedNumber = parseInt(this.textContent);
-        console.log(clickedNumber);
-        console.log(bombsNumbers);
-        if (bombsNumbers.includes(clickedNumber)) {
-            this.classList.add("bomb");
-        } else {
-            this.classList.add("blu");
-
+        if (!gameLost) {
+            const clickedNumber = parseInt(this.textContent);
+            console.log(clickedNumber);
+            console.log(bombsNumbers);
+            if (bombsNumbers.includes(clickedNumber)) {
+                this.classList.add("bomb");
+                gameLost = true
+                contLose.classList.remove("hidden")
+            } else {
+                this.classList.add("blu");
+            }
         }
+
     }
 
     containerRow.classList.remove("hidden");
