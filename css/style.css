@@ -26,6 +26,10 @@ button {
     background-color: cyan;
 }
 
+.col.bomb {
+    background-color: red;
+}
+
 
 /* HEADER */
 header {

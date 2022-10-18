@@ -65,8 +65,6 @@ startGameBtn.addEventListener("click", function () {
 
 
         }
-
-
         return numbersArray;
     }
 
@@ -91,8 +89,14 @@ startGameBtn.addEventListener("click", function () {
      */
     function handleSquareClick() {
         const clickedNumber = parseInt(this.textContent);
-        this.classList.add("blu");
         console.log(clickedNumber);
+        console.log(bombsNumbers);
+        if (bombsNumbers.includes(clickedNumber)) {
+            this.classList.add("bomb");
+        } else {
+            this.classList.add("blu");
+
+        }
     }
 
     containerRow.classList.remove("hidden");
