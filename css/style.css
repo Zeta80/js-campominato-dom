@@ -1,0 +1,99 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* UTILITIES */
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+button {
+    padding: 1em;
+}
+
+
+.container.hidden {
+    display: none;
+}
+
+/* COLORS */
+.col.blu {
+    background-color: cyan;
+}
+
+
+/* HEADER */
+header {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: white;
+}
+
+.wrapper-header {
+    width: 50%;
+    margin: 0 auto;
+}
+
+body {
+    background-color: lightgreen;
+}
+
+
+/* GRID */
+.container {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    border: 1px solid black;
+    width: 600px;
+    height: 600px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+}
+
+.col {
+
+    background-color: white;
+    border: 2px solid blue;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.tenxten {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+.ninexnine {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.sevenxseven {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
