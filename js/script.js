@@ -6,9 +6,23 @@ const containerRow = document.getElementById("container-row");
 //  Creare l'array con numeri casuali da 1 a 100
 startGameBtn.addEventListener("click", function () {
     const squaresNumber = 100;
+    const bombsNumbers = [];
     const generatedNumbers = generateRandomOrderArray(squaresNumber);
 
     document.querySelector(".row").innerHTML = "";
+
+    //ciclo while per generare numericamente le 16 bombe che mi sergvono per il gioco
+    do {
+
+
+        let randomBomb = getRndInteger(1, 100)
+        console.log(randomBomb);
+
+        bombsNumbers.push(randomBomb)
+    } while (bombsNumbers.length !== 16);
+    console.log(bombsNumbers);
+
+
 
     //  Per ogni numero creo un elemento square e lo insersco nella --griglia
     const row = document.querySelector(".row");
