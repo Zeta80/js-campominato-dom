@@ -119,3 +119,4 @@ startGameBtn.addEventListener("click", function () {
     containerRow.classList.remove("hidden");
 
 });
+// JAVASASSONE 🗿☜(ﾟヮﾟ☜)
