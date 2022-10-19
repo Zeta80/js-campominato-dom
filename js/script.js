@@ -14,6 +14,7 @@ startGameBtn.addEventListener("click", function () {
     const counterTentative = [];
     const generatedNumbers = generateRandomOrderArray(squaresNumber);
     let gameLost = !true;
+    contWin.classList.add("hidden")
     contLose.classList.add("hidden")
 
     document.querySelector(".row").innerHTML = "";
@@ -109,8 +110,11 @@ startGameBtn.addEventListener("click", function () {
                 contLose.classList.remove("hidden")
                 spanMessage.innerHTML = `hai usato ${counterTentative.length - 1} tentativi`
                 console.log(counterTentative, "ciao");
+            } else if ((counterTentative.length - bombsNumbers.length) == 84) {
+                contWin.classList.remove("hidden")
             } else {
                 this.classList.add("blu");
+
             }
         }
 
